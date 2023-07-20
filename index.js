@@ -1,8 +1,8 @@
-let products = JSON.parse(localStorage.getItem('product')) || [];
+let products = JSON.parse(localStorage.getItem("product")) || [];
 
 const ui = (products) => {
   console.log(products);
-  document.getElementById("ui").innerHTML=''
+  document.getElementById("ui").innerHTML = "";
   products.map((product) => {
     let img = document.createElement("img");
     img.src = product.img;
@@ -18,8 +18,8 @@ const ui = (products) => {
   });
 };
 
+ui(products);
 
-ui(products)
 const productdata = (e) => {
   e.preventDefault();
   let product = {
@@ -35,3 +35,20 @@ const productdata = (e) => {
 };
 
 document.querySelector("form").addEventListener("submit", productdata);
+
+// sorting by price
+const handlelth = () => {
+  let data = products.sort((a, b) => a.price - b.price);
+  ui(data);
+  console.log(data);
+};
+
+document.getElementById("lth").addEventListener("click", handlelth);
+
+const handlehtl = () => {
+  let data = products.sort((a, b) => b.price - a.price);
+  ui(data);
+  console.log(data);
+};
+
+document.getElementById("htl").addEventListener("click", handlehtl);
