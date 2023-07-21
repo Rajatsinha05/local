@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-        #ui{
+        #ui {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
         }
-        #ui div img{
+
+        #ui div img {
             width: 300px;
+        }
+        #btns{
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
         }
     </style>
 </head>
@@ -28,13 +35,16 @@
 
     </form>
     <hr>
-
+    <div id="btns">
         <button id="lth">low to high</button>
         <button id='htl'>high to low</button>
+        <!-- <button id="men">men</button>
+        <button id="women">women</button>
+        <button id="kids">kids</button> -->
+    </div>
+    <div id="ui">
 
-      <div id="ui">
-        
-      </div>
+    </div>
 </body>
 <script src="./index.js"></script>
 

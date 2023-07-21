@@ -1,1 +1,1 @@
-console.log("Starting")
+let products = JSON.parse(localStorage.getItem("product")) || [];

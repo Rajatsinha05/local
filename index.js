@@ -52,3 +52,27 @@ const handlehtl = () => {
 };
 
 document.getElementById("htl").addEventListener("click", handlehtl);
+
+// filter products by category
+
+const Handelcategory = (cat) => {
+  let data = products.filter((value) => value.category == cat);
+
+  console.log(data);
+  ui(data);
+};
+
+let cat = ["men", "women", "kids"];
+
+for (let i = 0; i < cat.length; i++) {
+  let btn = document.createElement("button");
+  btn.innerHTML = cat[i];
+  btn.setAttribute("id", cat[i]);
+  document.getElementById("btns").append(btn)
+}
+
+for (let i = 0; i < cat.length; i++) {
+  document
+    .getElementById(cat[i])
+    .addEventListener("click", () => Handelcategory(cat[i]));
+}
